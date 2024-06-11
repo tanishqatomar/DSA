@@ -1,0 +1,16 @@
+class Solution {
+
+    public static String PartyType( long a[], int n)
+    {
+        // Your code goes here
+        HashMap<Long, Boolean> map= new HashMap<>();
+        for (long val: a){
+            if(map.get(val)==null){
+                map.put(val, true);
+            }else{
+                return "BOYS";
+            }
+        }
+        return "GIRLLS";
+    }
+}
