@@ -1,13 +1,17 @@
 class Solution {
     public int removeElement(int[] nums, int val) {
-        int k=0;
-        for(int i=0;i<nums.length;i++){
-            if(nums[i]==val){}
-            else if(nums[i]!=val){
-                nums[k]=nums[i];
-                k++;
+        //two pointer approach
+        int reader = 0; //always moves
+        int writer = 0; //moves only when it is not equal to val
+        while(reader < nums.length){
+            if(nums[reader] == val){
+                reader++;
+            }else{
+                nums[writer] = nums[reader];
+                reader++;
+                writer++;
             }
         }
-        return k;
+        return writer;
     }
 }
