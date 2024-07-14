@@ -9,7 +9,7 @@ class Solution(object):
         q = head
         for i in range(0,n):
             p = p.next
-        if p is None:
+        if not p:
             return head.next
         while p.next is not None:
             p = p.next
